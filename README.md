@@ -89,7 +89,7 @@ The first thing to note is that there are 601 categories in openimage dataset. T
 
 <h4 id="1">1. Define category</h4>
 
-in `mmdetection/mmdet/datasets/coco.py`. Change the tuple of CLASSES to the tuple of the dataset. E.g:
+In `mmdetection/mmdet/datasets/coco.py`. Change the tuple of CLASSES to the tuple of the dataset. E.g:
 
 ```
 CLASSES = ('dog', 'cat')
@@ -97,7 +97,7 @@ CLASSES = ('dog', 'cat')
 Note: Use `read_classes.py` to get all the classes of openimage datasets.
 
 <h4 id="1">2. modify coco_classes</h4>
-in `mmdetection/mmdet/core/evaluation/class_names.py`
+in `mmdetection/mmdet/core/evaluation/class_names.py` .
 
 ```
 def coco_classes():
@@ -107,7 +107,7 @@ def coco_classes():
 ```
 
 <h4 id="1">3. modify the configuration file</h4>
-Modify num_classes img_scale and lr in `configs/faster_rcnn_r50_fpn_1x.py`. E.g:
+Modify num_classes img_scale and lr in `configs/faster_rcnn_r50_fpn_1x.py` . E.g:
 
 ```
 num_classes=3,#categories+1
