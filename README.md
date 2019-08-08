@@ -85,19 +85,6 @@ saved_coco_path = "./"   # path to save converted coco dataset
             - `0ddfc5aea-fcdac-421-92dad-144.jpg`
             - `...`
 
-<h5 id="3.2">3.2 csv2voc</h5>
-
-首先更改`csv2voc.py`中以下几个配置
-
-```
-csv_file = "labels.csv"
-saved_path = ".VOC2007/" # path to save converted voc dataset     
-image_save_path = "./JPEGImages/"   # converted voc images path
-image_raw_parh = "images/"          # original image path
-```
-
-然后运行 `python csv2voc.py`
-
 # 二、Training前修改相关文件
 首先说明的是我的数据集类别一共有601个。使用哪个模型修改对应模型的配置文件，这里以该模型为例：’configs/faster_rcnn_r50_fpn_1x.py’。
 <h4 id="1">1. 定义数据种类</h4>
