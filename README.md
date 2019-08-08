@@ -1,4 +1,4 @@
-**1、准备dataset**
+# 一、准备dataset
 把自己的数据集用csv2coco.py转化成coco数据集格式。
 <h4 id="1">1. 内容介绍</h4>
 
@@ -98,7 +98,7 @@ image_raw_parh = "images/"          # original image path
 
 然后运行 `python csv2voc.py`
 
-**2、Training前修改相关文件**
+# 二、Training前修改相关文件
 首先说明的是我的数据集类别一共有601个。使用哪个模型修改对应模型的配置文件，这里以该模型为例：’configs/faster_rcnn_r50_fpn_1x.py’。
 <h4 id="1">1. 定义数据种类</h4>
 需要修改的地方在mmdetection/mmdet/datasets/coco.py。把CLASSES的那个tuple改为自己数据集对应的种类tuple即可。例如：
