@@ -1,5 +1,5 @@
 # prepare dataset
-Convert openimage dataset to coco dataset format using csv2coco.py.
+Convert openimage dataset to coco dataset format using `csv2coco.py`.
 <h4 id="1">1. Introduction</h4>
 
 Describe how to convert csv format data into coco format:
@@ -38,7 +38,7 @@ for instance:
 Note: Please use absolute path for image path
 
 
-<h5 id="2.3">2.2 coco</h5>
+<h5 id="2.2">2.2 coco</h5>
 
 coco format
 
@@ -97,7 +97,7 @@ CLASSES = ('dog', 'cat')
 Note: Use `read_classes.py` to get all the classes of openimage datasets.
 
 <h4 id="1">2. modify coco_classes</h4>
-in mmdetection/mmdet/core/evaluation/class_names.py
+in `mmdetection/mmdet/core/evaluation/class_names.py`
 
 ```
 def coco_classes():
@@ -107,7 +107,7 @@ def coco_classes():
 ```
 
 <h4 id="1">3. modify the configuration file</h4>
-Modify `num_classes` in `model` in `configs/faster_rcnn_r50_fpn_1x.py`, `img_scale` in `data`, and `lr` (learning rate) in `optimizer`. E.g:
+Modify -`num_classes` in `model` in `configs/faster_rcnn_r50_fpn_1x.py`, `img_scale` in `data`, and `lr` (learning rate) in `optimizer`. E.g:
 
 ```
 num_classes=3,#categories+1
