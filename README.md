@@ -1,21 +1,20 @@
-# 一、准备dataset
-把自己的数据集用csv2coco.py转化成coco数据集格式。
-<h4 id="1">1. 内容介绍</h4>
+# prepare dataset
+Convert openimage dataset to coco dataset format using csv2coco.py.
+<h4 id="1">1. Introduction</h4>
 
-介绍如何将csv格式数据及转化为coco格式：
+Describe how to convert csv format data into coco format:
 
 - csv to coco
 
 
-<h4 id="2">2. 标准格式</h4>
+<h4 id="2">2. standard format</h4>
 
-在使用转换脚本之前，必须要明确的几种格式
+Several formats must be specified before using the conversion script.
 
 <h5 id="2.1">2.1 csv</h5>
 
-不要一看是`csv`文件就直接拿来运行，如果不是，可以自行修改代码，或者修改标注文件。
 
-转换脚本支持的csv格式应为以下形式:
+The csv format supported by the conversion script should be of the form:
 
 - `csv/`
     - `labels.csv`
@@ -24,23 +23,24 @@
         - `image2.jpg`
         - `...`
 
-`labels.csv` 的形式: 
+`labels.csv` : 
 
 `/path/to/image,xmin,ymin,xmax,ymax,label`
 
-例如:
+for instance:
 
 ```
 /mfs/dataset/face/0d4c5e4f-fc3c-4d5a-906c-105.jpg,450,154,754,341,dog
 /mfs/dataset/face/0ddfc5aea-fcdac-421-92dad-144.jpg,143,154,344,341,cat
 ...
 ```
-注：图片路径请使用绝对路径
+
+Note: Please use absolute path for image path
 
 
 <h5 id="2.3">2.2 coco</h5>
 
-此处未使用测试集
+coco format
 
 - `coco/`
     - `annotations/`
@@ -56,11 +56,11 @@
 
 
 
-<h4 id="3">3. 如何使用转换脚本</h4>
+<h4 id="3">3. How to use the conversion script</h4>
 
 <h5 id="3.1">3.1 csv2coco</h5>
 
-首先更改`csv2coco.py`中以下几个配置
+First change the following configuration in `csv2coco.py`
 
 ```
 classname_to_id = {"person": 1}  # for your dataset classes
