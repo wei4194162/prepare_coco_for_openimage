@@ -106,6 +106,7 @@ image_raw_parh = "images/"          # original image path
 ```
 CLASSES = ('dog', 'cat')
 ```
+注：使用read_classes.py获取openimage数据集的所有种类。
 
 <h4 id="1">2. 修改coco_classes数据集类别</h4>
 需要修改的地方在mmdetection/mmdet/core/evaluation/class_names.py。
