@@ -107,7 +107,7 @@ def coco_classes():
 ```
 
 <h4 id="1">3. modify the configuration file</h4>
-Modify -`num_classes` in `model` in `configs/faster_rcnn_r50_fpn_1x.py`, `img_scale` in `data`, and `lr` (learning rate) in `optimizer`. E.g:
+Modify num_classes img_scale and lr in `configs/faster_rcnn_r50_fpn_1x.py`. E.g:
 
 ```
 num_classes=3,#categories+1
