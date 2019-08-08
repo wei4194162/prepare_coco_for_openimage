@@ -97,7 +97,9 @@ CLASSES = ('dog', 'cat')
 Note: Use `read_classes.py` to get all the classes of openimage datasets.
 
 <h4 id="1">2. modify coco_classes</h4>
+
 In `mmdetection/mmdet/core/evaluation/class_names.py` . Change the tuple of CLASSES to the tuple of the dataset. E.g:
+In `mmdetection/mmdet/datasets/coco.py`. Change the tuple of CLASSES to the tuple of the dataset. E.g:
 
 ```
 def coco_classes():
