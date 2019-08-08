@@ -120,3 +120,8 @@ num_classes=3,#类别数+1
 img_scale=(640,478), #输入图像尺寸的最大边与最小边（train、val、test这三处都要修改）
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #当gpu数量为8时,lr=0.02；当gpu数量为4时,lr=0.01；我只要一个gpu，所以设置lr=0.0025
 ```
+```
+num_classes=3,#类别数+1
+img_scale=(640,478), #输入图像尺寸的最大边与最小边（train、val、test这三处都要修改）
+optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #当gpu数量为8时,lr=0.02；当gpu数量为4时,lr=0.01；我只要一个gpu，所以设置lr=0.0025
+```
