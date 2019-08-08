@@ -85,16 +85,16 @@ The folder will be created automatically and the image will be copied to the cor
             - `...`
 
 # modify related files before Training
-The first thing to note is that there are 601 categories in openimage dataset. Then modify the configuration file, here is an example of this model: 'configs/faster_rcnn_r50_fpn_1x.py'.
+The first thing to note is that there are 601 categories in openimage dataset. Then modify the configuration file, here is an example of this model: `configs/faster_rcnn_r50_fpn_1x.py` .
 
 <h4 id="1">1. Define category</h4>
 
-in mmdetection/mmdet/datasets/coco.py. Change the tuple of CLASSES to the tuple of the dataset. E.g:
+in `mmdetection/mmdet/datasets/coco.py`. Change the tuple of CLASSES to the tuple of the dataset. E.g:
 
 ```
 CLASSES = ('dog', 'cat')
 ```
-Note: Use read_classes.py to get all the classes of openimage datasets.
+Note: Use `read_classes.py` to get all the classes of openimage datasets.
 
 <h4 id="1">2. modify coco_classes</h4>
 in mmdetection/mmdet/core/evaluation/class_names.py
@@ -107,7 +107,7 @@ def coco_classes():
 ```
 
 <h4 id="1">3. modify the configuration file</h4>
-Modify num_classes in the model in configs/faster_rcnn_r50_fpn_1x.py, img_scale in the data, and lr (learning rate) in the optimizer. E.g:
+Modify `num_classes` in `model` in `configs/faster_rcnn_r50_fpn_1x.py`, `img_scale` in `data`, and `lr` (learning rate) in `optimizer`. E.g:
 
 ```
 num_classes=3,#categories+1
