@@ -44,7 +44,7 @@ class Csv2CoCo:
         self.total_annos = total_annos
 
     def save_coco_json(self, instance, save_path):
-        json.dump(instance, open(save_path, 'w'), ensure_ascii=False, indent=2)  # indent=2 更加美观显示
+        json.dump(instance, open(save_path, 'w'), ensure_ascii=False)  # indent=2 更加美观显示
 
     # 由txt文件构建COCO
     def to_coco(self, keys):
@@ -57,25 +57,25 @@ class Csv2CoCo:
 
         # imagekeys=pool.map(self._image,keys)
 
-        start = time.time()
+        # start = time.time()
+        #
+        # self.imagekeys=pool.map(self._image,keys)
+        # pool.close()
+        # pool.join()
+        # end = time.time()
 
-        self.imagekeys=pool.map(self._image,keys)
-        pool.close()
-        pool.join()
-        end = time.time()
-
-        print('\nimagekey process',len(self.imagekeys),'in\n:',end-start,'per',len(self.imagekeys)/(end-start),'/sec\n\n')
+        # print('\nimagekey process',len(self.imagekeys),'in\n:',end-start,'per',len(self.imagekeys)/(end-start),'/sec\n\n')
         # exit(0)
         # self.image_s=self.imagekeys
 
 
         for key in tqdm(keys):
 
-            # self.imagekey=self._image(key)
-            #
-            # if self.imagekey==0:
-            #     continue
-            # self.images.append(self.imagekey)
+            self.imagekey=self._image(key)
+
+            if self.imagekey==0:
+                continue
+            self.images.append(self.imagekey)
             shapes = self.total_annos[key]
             for shape in shapes:
                 bboxi=shape[:-1]
@@ -94,9 +94,9 @@ class Csv2CoCo:
             self.img_id += 1
 
         instance = {}
-        instance['info'] = 'weizhaoyu created'
+        instance['info'] = 'spytensor created'
         instance['license'] = ['license']
-        instance['images'] = self.imagekeys
+        instance['images'] = self.images
         instance['annotations'] = self.annotations
         instance['categories'] = self.categories
         return instance
