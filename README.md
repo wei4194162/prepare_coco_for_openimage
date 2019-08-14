@@ -116,3 +116,5 @@ num_classes=3,#categories+1
 img_scale=(640,478), #maximum and minimum edges of the input image size (train, val, test all three places must be modified)
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #When the number of gpu is 8, lr=0.02; when the number of gpu is 4, lr=0.01
 ```
+
+Feel free to ask any questions. Zhaoyu Wei, weizy.ai@gmail.com
